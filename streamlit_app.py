@@ -5,7 +5,7 @@ import pandas as pd
 import seaborn as sns
 
 # Configuración de Streamlit
-st.sidebar.title('Secuencia Genética')
+st.sidebar.title('Configuración')
 
 # Función para calcular la composición de nucleótidos
 def nucleotides_composition(seqadn):
