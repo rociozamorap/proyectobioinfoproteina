@@ -43,7 +43,7 @@ if seqadn != "":
             labels = list(nuc.keys())  # Nucleótidos: A, C, G, T
             sizes = list(nuc.values())  # Composición en porcentaje
             colors = [bcolor] * len(labels) # Usar el color seleccionado para todos los nucleótidos
-            ax.pie(sizes, labels=labels, autopct='%1.1f%%', startangle=90, colors=colors)
+            ax.pie(sizes, labels=labels, autopct='%1.1f%%', startangle=90, colors=#F5CBED)
             ax.set_title("Composición de Nucleótidos en la Secuencia de ADN")
 
         # Gráfico de barras con la composición de nucleótidos
