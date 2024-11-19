@@ -1,27 +1,12 @@
 import streamlit as st
 import numpy as np
 import matplotlib.pyplot as plt
-import requests
 import json
+from Bio import SeqIO
 
-# Función para obtener información de proteínas
-
-# Función para obtener información de proteínas
-def get_protein_info(prot):
-    try:
-        req = requests.get(f'https://data.rcsb.org/rest/v1/core/entry/{prot}/')
-        prot_data = json.loads(req.text)
-        title = prot_data["struct"]["title"]
-        descriptor = prot_data["struct"]["pdbx_descriptor"]
-        return descriptor, title
-    except Exception as e:
-        return None, f"Error al obtener información de la proteína: {e}"
-
-# Configuración de Streamlit
 st.sidebar.title('Proteina')
 bcolor = st.sidebar.color_picker('Pick A Color', '#DBDEDB')
 protein = st.sidebar.text_input('Ingrese la secuencia de ADN: ', "")
-
 
 # Configuración de Streamlit
 st.title("Selector de Gráficos")
