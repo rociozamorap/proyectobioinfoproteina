@@ -14,10 +14,23 @@ def get_protein_info(prot):
         return descriptor, title
     except Exception as e:
         return None, f"Error al obtener información de la proteína: {e}"
+if protein != "":
+    st.sidebar.markdown(f'**{get_protein_info(protein)[0]}**')
+    st.sidebar.markdown(f'**{get_protein_info(protein)[1]}**')
+    xyzview = py3Dmol.view(query='pdb:'+protein)
+    xyzview.setStyle({style:{'color':'spectrum'}})
+    xyzview.setBackgroundColor(bcolor)
+    if spin:
+        xyzview.spin(True)
+    else:
+        xyzview.spin(False)
+    xyzview.zoomTo()
+    showmol(xyzview,height=500,width=800)
 
 # Configuración de Streamlit
 st.sidebar.title('Proteina')
 protein = st.sidebar.text_input('Ingrese la secuencia de ADN:', "")
+bcolor = st.sidebar.color_picker('Pick A Color', '#DBDEDB')
 
 st.title("Selector de Gráficos")
 
