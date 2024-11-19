@@ -46,9 +46,10 @@ def generate_graph(option, graph_type):
 
 # Mostrar el gráfico seleccionado
 try:
-    fig = generate_graph(graph_type)
+    fig = generate_graph(protein, graph_type)  # Pasar 'protein' como 'option'
     st.pyplot(fig)  # Mostrar el gráfico en Streamlit
 except Exception as e:
     st.error(f"¡Error al generar el gráfico: {e}!")
+
 
 
