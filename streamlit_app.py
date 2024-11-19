@@ -12,26 +12,10 @@ bcolor = st.sidebar.color_picker('Escoge un color :)', '#DBDEDB')
 
 def main():
 with st.sidebar:
-        st.header("Configuration")
         api_options = ("echarts", "pyecharts")
         selected_api = st.selectbox(
             label="Choose your preferred API:",
             options=api_options,
-        )
-
-        page_options = (
-            list(ST_PY_DEMOS.keys())
-            if selected_api == "pyecharts"
-            else list(ST_DEMOS.keys())
-        )
-        selected_page = st.selectbox(
-            label="Choose an example",
-            options=page_options,
-        )
-        demo, url = (
-            ST_DEMOS[selected_page]
-            if selected_api == "echarts"
-            else ST_PY_DEMOS[selected_page]
         )
 
         if selected_api == "echarts":
