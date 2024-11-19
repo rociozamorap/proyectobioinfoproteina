@@ -16,7 +16,8 @@ def get_protein_info(prot):
         return None, f"Error al obtener información de la proteína: {e}"
 
 # Configuración de Streamlit
-st.sidebar.title('Show Proteins')
+st.sidebar.title('Proteina')
+protein = st.sidebar.text_input('Ingrese la secuencia de ADN:', "")
 
 st.title("Selector de Gráficos")
 
