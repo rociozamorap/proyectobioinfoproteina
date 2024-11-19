@@ -34,7 +34,7 @@ if seqadn != "":
     graph_type = st.radio("Selecciona el tipo de gráfico:", ["Gráfico de Pastel", "Barras", "Barras Horizontales", "Histograma"])
 
     # Función para generar gráficos
-    def generate_graph(seqadn, graph_type):
+    def generate_graph(seqadn, graph_type, bcolor):
         fig, ax = plt.subplots(figsize=(8, 6))  # Crear una figura
 
         # Gráfico de pastel con la composición de nucleótidos
@@ -42,23 +42,24 @@ if seqadn != "":
             # Los valores para el gráfico de pastel serán los porcentajes de composición de nucleótidos
             labels = list(nuc.keys())  # Nucleótidos: A, C, G, T
             sizes = list(nuc.values())  # Composición en porcentaje
-            ax.pie(sizes, labels=labels, autopct='%1.1f%%', startangle=90, colors=["#FF9999", "#66B3FF", "#99FF99", "#FFCC99"])
+            colors = [bcolor] * len(labels) # Usar el color seleccionado para todos los nucleótidos
+            ax.pie(sizes, labels=labels, autopct='%1.1f%%', startangle=90, colors=colors)
             ax.set_title("Composición de Nucleótidos en la Secuencia de ADN")
 
         # Gráfico de barras con la composición de nucleótidos
         elif graph_type == "Barras":
             sns.set(style="whitegrid")
-            sns.barplot(x="Nucleotide", y="Composition", data=ndf, ax=ax)
+            sns.barplot(x="Nucleotide", y="Composition", data=ndf, ax=ax, color=bcolor)
             ax.set_title("Composición de Nucleótidos en la Secuencia de ADN")
 
         # Gráfico de barras horizontales
         elif graph_type == "Barras Horizontales":
-            ax.barh(ndf["Nucleotide"], ndf["Composition"])
+            ax.barh(ndf["Nucleotide"], ndf["Composition"], color=bcolor)
             ax.set_title("Composición de Nucleótidos (Barras Horizontales)")
 
         # Histograma (esto no aplica directamente con ADN, pero lo dejo como ejemplo)
         elif graph_type == "Histograma":
-            ax.hist(list(nuc.values()), bins=4, label="Composición")
+            ax.hist(list(nuc.values()), bins=4, label="Composición", color=bcolor)
             ax.set_title("Histograma de Composición de Nucleótidos")
 
         # Ajustes del gráfico
@@ -71,7 +72,7 @@ if seqadn != "":
 
     # Mostrar el gráfico seleccionado
     try:
-        fig = generate_graph(seqadn, graph_type)  # Pasar 'seqadn' como 'option'
+        fig = generate_graph(seqadn, graph_type, bcolor)  # Pasar 'seqadn' como 'option'
         st.pyplot(fig)  # Mostrar el gráfico en Streamlit
     except Exception as e:
         st.error(f"¡Error al generar el gráfico: {e}!")
