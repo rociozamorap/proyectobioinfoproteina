@@ -64,7 +64,7 @@ if composition:
     st.title(f"Composición de {title}")
     graph_type = st.radio(
         "Selecciona el tipo de gráfico:", 
-        ["Gráfico de Pastel", "Barras", "Barras Horizontales", "Histograma"]
+        ["Gráfico de Pastel", "Barras", "Barras Horizontales", "Gráfico de Área"]
     )
 
     # Función para generar gráficos
@@ -87,9 +87,12 @@ if composition:
             ax.barh(df[title], df["Composition"], color=bcolor)
             ax.set_title(f"Composición de {title} (Barras Horizontales)")
 
-        elif graph_type == "Histograma":
-            ax.hist(list(composition.values()), bins=4, label="Composición", color=bcolor)
-            ax.set_title(f"Histograma de Composición de {title}")
+        elif graph_type == "Gráfico de Área":
+            x = df[title]
+            y = df["Composition"]
+            ax.fill_between(x, y, color=bcolor, alpha=0.7)
+            ax.plot(x, y, color="black", marker="o")  # Línea y puntos en el gráfico
+            ax.set_title(f"Gráfico de Área de Composición de {title}")
 
         ax.set_xlabel(title)
         ax.set_ylabel("Composición (%)")
@@ -102,4 +105,3 @@ if composition:
         st.pyplot(fig)  # Mostrar el gráfico en Streamlit
     except Exception as e:
         st.error(f"¡Error al generar el gráfico: {e}!")
-
