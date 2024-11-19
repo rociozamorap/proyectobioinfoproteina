@@ -18,6 +18,15 @@ def nucleotides_composition(seqadn):
         nucleotides[n] = seqadn.upper().count(n) / len(seqadn) * 100  # Calcula el porcentaje de cada nucleótido
     return nucleotides
 
+def protein_composition(seqadn):
+    proteina = {'A': 0, 'C': 0, 'G': 0, 'U': 0}
+    if len(seqadn) == 0:  # Verificar que la secuencia no esté vacía
+        return nucleotides  # Retornar 0% si la secuencia está vacía
+    
+    for p in proteina:
+        proteina[p] = seqadn.upper().count(n) / len(seqadn) * 100  # Calcula el porcentaje de cada proteina
+    return proteina
+
 with st.sidebar:
     api_options = ("Nucleótido", "Proteína")
     selected_api = st.selectbox(
