@@ -5,6 +5,8 @@ import requests
 import json
 
 # Función para obtener información de proteínas
+
+# Función para obtener información de proteínas
 def get_protein_info(prot):
     try:
         req = requests.get(f'https://data.rcsb.org/rest/v1/core/entry/{prot}/')
@@ -14,18 +16,37 @@ def get_protein_info(prot):
         return descriptor, title
     except Exception as e:
         return None, f"Error al obtener información de la proteína: {e}"
+
+# Configuración de Streamlit
+protein = st.sidebar.text_input('Ingrese el código de la proteína (PDB):', "")
+
 if protein != "":
-    st.sidebar.markdown(f'**{get_protein_info(protein)[0]}**')
-    st.sidebar.markdown(f'**{get_protein_info(protein)[1]}**')
-    xyzview = py3Dmol.view(query='pdb:'+protein)
-    xyzview.setStyle({style:{'color':'spectrum'}})
-    xyzview.setBackgroundColor(bcolor)
-    if spin:
-        xyzview.spin(True)
+    # Obtener información de la proteína
+    descriptor, title = get_protein_info(protein)
+
+    if descriptor and title:
+        st.sidebar.markdown(f'**{descriptor}**')
+        st.sidebar.markdown(f'**{title}**')
+
+        # Visualización 3D de la proteína usando py3Dmol
+        xyzview = py3Dmol.view(query=f'pdb:{protein}')
+        xyzview.setStyle({'stick': {}})  # Define el estilo de la visualización (por ejemplo, estilo 'stick')
+        xyzview.setBackgroundColor("white")  # Configura el color de fondo
+
+        # Condición para hacer girar la molécula
+        spin = st.sidebar.checkbox("Girar molécula")
+        if spin:
+            xyzview.spin(True)
+        else:
+            xyzview.spin(False)
+
+        # Ajusta el zoom de la visualización
+        xyzview.zoomTo()
+
+        # Mostrar la visualización en la aplicación de Streamlit
+        st.py3Dmol(xyzview, height=500, width=800)
     else:
-        xyzview.spin(False)
-    xyzview.zoomTo()
-    showmol(xyzview,height=500,width=800)
+        st.sidebar.error("No se pudo obtener información de la proteína.")
 
 # Configuración de Streamlit
 st.sidebar.title('Proteina')
