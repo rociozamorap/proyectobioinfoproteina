@@ -8,29 +8,6 @@ import seaborn as sns
 # Configuración de Streamlit
 st.sidebar.title('Secuencia Genética')
 
-with st.sidebar:
-        api_options = ("Nucleótido", "Proteína")
-        selected_api = st.selectbox(
-            label="Escoge el tipo de biomolécula:",
-            options=api_options,
-        )
-
-        if selected_api == "Nucleótido":
-            st.caption(
-                """ECharts demos are extracted from https://echarts.apache.org/examples/en/index.html, 
-            by copying/formattting the 'option' json object into st_echarts.
-            Definitely check the echarts example page, convert the JSON specs to Python Dicts and you should get a nice viz."""
-            )
-        if selected_api == "Proteína":
-            st.caption(
-                """Pyecharts demos are extracted from https://github.com/pyecharts/pyecharts-gallery,
-            by copying the pyecharts object into st_pyecharts. 
-            Pyecharts is still using ECharts 4 underneath, which is why the theming between st_echarts and st_pyecharts is different."""
-            )
-                
-seqadn = st.sidebar.text_input('Ingrese la secuencia de ADN: ', "")
-bcolor = st.sidebar.color_picker('Escoge un color :)', '#DBDEDB')
-
 # Función para calcular la composición de nucleótidos
 def nucleotides_composition(seqadn):
     nucleotides = {'A': 0, 'C': 0, 'G': 0, 'T': 0}
@@ -41,7 +18,15 @@ def nucleotides_composition(seqadn):
         nucleotides[n] = seqadn.count(n) / len(seqadn) * 100  # Calcula el porcentaje de cada nucleótido
     return nucleotides
 
-# Calcular la composición de nucleótidos solo si la secuencia no está vacía
+with st.sidebar:
+        api_options = ("Nucleótido", "Proteína")
+        selected_api = st.selectbox(
+            label="Escoge el tipo de biomolécula:",
+            options=api_options,
+        )
+
+        if selected_api == "Nucleótido":
+
 if seqadn != "":
     nuc = nucleotides_composition(seqadn)
 
@@ -99,5 +84,18 @@ if seqadn != "":
         st.error(f"¡Error al generar el gráfico: {e}!")
 else:
     st.warning("Por favor ingrese una secuencia de ADN válida antes de comenzar.")
+                
+        if selected_api == "Proteína":
+            st.caption(
+                """Pyecharts demos are extracted from https://github.com/pyecharts/pyecharts-gallery,
+            by copying the pyecharts object into st_pyecharts. 
+            Pyecharts is still using ECharts 4 underneath, which is why the theming between st_echarts and st_pyecharts is different."""
+            )
+                
+seqadn = st.sidebar.text_input('Ingrese la secuencia de ADN: ', "")
+bcolor = st.sidebar.color_picker('Escoge un color :)', '#DBDEDB')
+
+
+# Calcular la composición de nucleótidos solo si la secuencia no está vacía
 
 
