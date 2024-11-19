@@ -4,6 +4,16 @@ import matplotlib.pyplot as plt
 import requests
 import json
 
+from Bio.PDB import PDBParser, PDBList
+from Bio.SeqUtils import seq1
+from Bio.PDB.Polypeptide import CaPPBuilder
+from Bio.PDB.Atom import Atom
+from biopandas.pdb import PandasPdb
+import plotly.express as px
+import seaborn as sns
+import matplotlib.pyplot as plt
+import py3Dmol
+
 # Función para obtener información de proteínas
 def get_protein_info(prot):
     try:
