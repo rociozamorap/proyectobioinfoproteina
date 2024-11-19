@@ -76,5 +76,5 @@ if seqadn != "":
     except Exception as e:
         st.error(f"¡Error al generar el gráfico: {e}!")
 else:
-    st.warning("Por favor ingrese una secuencia de ADN antes de comenzar.")
+    st.warning("Por favor ingrese una secuencia de ADN válida antes de comenzar.")
 
