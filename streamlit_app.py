@@ -11,7 +11,7 @@ st.sidebar.title('Secuencia Genética')
 with st.sidebar:
         api_options = ("Nucleótido", "Proteína")
         selected_api = st.selectbox(
-            label="Choose your preferred API:",
+            label="Escoge el tipo de biomolécula:",
             options=api_options,
         )
 
