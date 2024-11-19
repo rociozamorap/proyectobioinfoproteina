@@ -75,16 +75,17 @@ if selected_api == "Nucleótido":
 
         return fig
 
+    # Calcular la composición de nucleótidos solo si la secuencia no está vacía
     # Mostrar el gráfico seleccionado
     try:
         fig = generate_graph(seqadn, graph_type, bcolor)  # Pasar 'seqadn' como 'option'
         st.pyplot(fig)  # Mostrar el gráfico en Streamlit
     except Exception as e:
         st.error(f"¡Error al generar el gráfico: {e}!")
-else:
+    else:
     st.warning("Por favor ingrese una secuencia de ADN válida antes de comenzar.")
                 
-        if selected_api == "Proteína":
+elif selected_api == "Proteína":
             st.caption(
                 """Pyecharts demos are extracted from https://github.com/pyecharts/pyecharts-gallery,
             by copying the pyecharts object into st_pyecharts. 
@@ -94,7 +95,5 @@ else:
 seqadn = st.sidebar.text_input('Ingrese la secuencia de ADN: ', "")
 bcolor = st.sidebar.color_picker('Escoge un color :)', '#DBDEDB')
 
-
-# Calcular la composición de nucleótidos solo si la secuencia no está vacía
 
 
