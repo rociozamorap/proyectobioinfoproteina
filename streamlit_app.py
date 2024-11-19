@@ -34,10 +34,12 @@ def generate_graph(seqadn, graph_type):
     fig, ax = plt.subplots(figsize=(8, 6))  # Crear una figura
 
     # Gráfico de líneas (sin usar, porque no tiene sentido con ADN directamente)
-    x = np.linspace(0, 10, 100)  # Valores para el eje x
-    y = np.sin(x)  # Ejemplo para un gráfico de líneas, si se decide usar
-    if graph_type == "Lineas":
-        ax.plot(x, y, label="Ejemplo de línea")
+   if graph_type == "Gráfico de Pastel":
+        # Los valores para el gráfico de pastel serán los porcentajes de composición de nucleótidos
+        labels = list(nuc.keys())  # Nucleótidos: A, C, G, T
+        sizes = list(nuc.values())  # Composición en porcentaje
+        ax.pie(sizes, labels=labels, autopct='%1.1f%%', startangle=90, colors=["#FF9999", "#66B3FF", "#99FF99", "#FFCC99"])
+        ax.set_title("Composición de Nucleótidos en la Secuencia de ADN")
         
     # Gráfico de barras con la composición de nucleótidos
     elif graph_type == "Barras":
