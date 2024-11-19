@@ -10,7 +10,6 @@ st.sidebar.title('Secuencia Genética')
 seqadn = st.sidebar.text_input('Ingrese la secuencia de ADN: ', "")
 bcolor = st.sidebar.color_picker('Escoge un color :)', '#DBDEDB')
 
-def main():
 with st.sidebar:
         api_options = ("echarts", "pyecharts")
         selected_api = st.selectbox(
@@ -30,10 +29,7 @@ with st.sidebar:
             by copying the pyecharts object into st_pyecharts. 
             Pyecharts is still using ECharts 4 underneath, which is why the theming between st_echarts and st_pyecharts is different."""
             )
-
-    demo()
-
-    sourcelines, _ = inspect.getsourcelines(demo)
+                
 
 # Función para calcular la composición de nucleótidos
 def nucleotides_composition(seqadn):
