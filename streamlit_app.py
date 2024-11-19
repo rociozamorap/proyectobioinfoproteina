@@ -23,7 +23,6 @@ st.title("Selector de Gráficos")
 
 # Selector para tipo de gráfico
 graph_type = st.radio("Selecciona el tipo de gráfico:", ["Lineas", "Barras", "Barras Horizontales", "Histograma"])
-selection = st.radio("Selecciona una función:", options)
 
 # Función para generar gráficos
 def generate_graph(option, graph_type):
@@ -47,7 +46,7 @@ def generate_graph(option, graph_type):
 
 # Mostrar el gráfico seleccionado
 try:
-    fig = generate_graph(selection, graph_type)
+    fig = generate_graph(graph_type)
     st.pyplot(fig)  # Mostrar el gráfico en Streamlit
 except Exception as e:
     st.error(f"¡Error al generar el gráfico: {e}!")
