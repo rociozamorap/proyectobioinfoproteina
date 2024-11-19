@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import json
 from Bio import SeqIO
 
-st.sidebar.title('Proteina')
+st.sidebar.title('Secuencia Genética')
 bcolor = st.sidebar.color_picker('Pick A Color', '#DBDEDB')
 adn = st.sidebar.text_input('Ingrese la secuencia de ADN: ', "")
 
@@ -40,7 +40,7 @@ def generate_graph(option, graph_type):
 
 # Mostrar el gráfico seleccionado
 try:
-    fig = generate_graph(protein, graph_type)  # Pasar 'protein' como 'option'
+    fig = generate_graph(adn, graph_type)  # Pasar 'adn' como 'option'
     st.pyplot(fig)  # Mostrar el gráfico en Streamlit
 except Exception as e:
     st.error(f"¡Error al generar el gráfico: {e}!")
