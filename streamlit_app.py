@@ -58,8 +58,14 @@ if selected_api == "Nucleótido":
             if graph_type == "Gráfico de Pastel":
                 labels = list(nuc.keys())
                 sizes = list(nuc.values())
+                # Selector de colores dinámicos
+    st.subheader("Selecciona colores para cada nucleótido:")
+    colors = []
+    for label in labels:
+        color = st.color_picker(f"Color para {label}", "#FFFFFF")
+        colors.append(color)
                 ax.pie(sizes, labels=labels, autopct='%1.1f%%', startangle=90, 
-                       colors=["#F5CBED", "#EFB3E3", "#DA84C9", "#BF63AD"])
+                       colors=colors)
                 ax.set_title("Composición de Nucleótidos en la Secuencia de ADN")
 
             elif graph_type == "Barras":
