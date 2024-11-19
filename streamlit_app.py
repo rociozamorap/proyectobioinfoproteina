@@ -18,7 +18,7 @@ def get_protein_info(prot):
         return None, f"Error al obtener información de la proteína: {e}"
 
 # Configuración de Streamlit
-protein = st.sidebar.text_input('Ingrese el código de la proteína (PDB):', "")
+protein = st.sidebar.text_input('Ingrese la secuencia de ADN: ', "")
 
 if protein != "":
     # Obtener información de la proteína
@@ -49,10 +49,6 @@ if protein != "":
         st.sidebar.error("No se pudo obtener información de la proteína.")
 
 # Configuración de Streamlit
-st.sidebar.title('Proteina')
-protein = st.sidebar.text_input('Ingrese la secuencia de ADN:', "")
-bcolor = st.sidebar.color_picker('Pick A Color', '#DBDEDB')
-
 st.title("Selector de Gráficos")
 
 # Selector para tipo de gráfico
