@@ -11,6 +11,8 @@ def get_protein_info(prot):
     try:
         req = requests.get(f'https://data.rcsb.org/rest/v1/core/entry/{prot}/')
         prot_data = json.loads(req.text)
+        st.sidebar.title('Proteina')
+        bcolor = st.sidebar.color_picker('Pick A Color', '#DBDEDB')
         title = prot_data["struct"]["title"]
         descriptor = prot_data["struct"]["pdbx_descriptor"]
         return descriptor, title
