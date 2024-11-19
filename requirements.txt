@@ -6,4 +6,5 @@ rdkit
 ipython_genutils
 matplotlib
 numpy
-
+Bio
+biopandas
