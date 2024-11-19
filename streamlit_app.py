@@ -6,23 +6,22 @@ import pandas as pd
 import seaborn as sns
 
 st.sidebar.title('Secuencia Genética')
-adn = st.sidebar.text_input('Ingrese la secuencia de ADN: ', "")
+seqadn = st.sidebar.text_input('Ingrese la secuencia de ADN: ', "")
 bcolor = st.sidebar.color_picker('Escoge un color :)', '#DBDEDB')
 
-seqadn=adn
-def nucleotides_composition(seq):
+def nucleotides_composition(seqadn):
     nucleotides = {'A': 0, 'C': 0, 'G': 0, 'T': 0}
     for n in nucleotides:
-        nucleotides[n] = seqadn.count(n)/len(seq)*100
+        nucleotides[n] = seqadn.count(n) / len(seqadn) * 100  # Calcula el porcentaje de cada nucleótido
     return nucleotides
+
+# Calcular la composición de nucleótidos
 nuc = nucleotides_composition(seqadn)
-nuc
 
-
-
-
-
-
+# Crear un DataFrame con los datos de la composición de nucleótidos
+ndf = pd.DataFrame.from_dict(nuc, orient='index')
+ndf = ndf.reset_index()
+ndf = ndf.rename(columns={"index": "Nucleotide", 0: "Composition"})
 
 
 
@@ -47,7 +46,13 @@ def generate_graph(option, graph_type):
     if graph_type == "Line":
         ax.plot(x, y, label=option)
     elif graph_type == "Bar":
-        ax.bar(x[:10], y[:10], label=option)  # Graficar solo los primeros 10 valores
+        sns.set(style="whitegrid")
+        plt.figure(figsize=(8, 6))
+        nbar = sns.barplot(x="Nucleotide", y="Composition", data=ndf)
+        
+        plt.title("Composición de Nucleótidos en la Secuencia de ADN")
+        plt.show()
+
     elif graph_type == "Barh":
         ax.barh(x[:10], y[:10], label=option)  # Graficar solo los primeros 10 valores
     elif graph_type == "Hist":
