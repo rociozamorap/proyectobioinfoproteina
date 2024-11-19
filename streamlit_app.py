@@ -7,8 +7,6 @@ import seaborn as sns
 
 # Configuración de Streamlit
 st.sidebar.title('Secuencia Genética')
-seqadn = st.sidebar.text_input('Ingrese la secuencia de ADN: ', "")
-bcolor = st.sidebar.color_picker('Escoge un color :)', '#DBDEDB')
 
 with st.sidebar:
         api_options = ("Nucleótido", "Proteína")
@@ -30,6 +28,8 @@ with st.sidebar:
             Pyecharts is still using ECharts 4 underneath, which is why the theming between st_echarts and st_pyecharts is different."""
             )
                 
+seqadn = st.sidebar.text_input('Ingrese la secuencia de ADN: ', "")
+bcolor = st.sidebar.color_picker('Escoge un color :)', '#DBDEDB')
 
 # Función para calcular la composición de nucleótidos
 def nucleotides_composition(seqadn):
