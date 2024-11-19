@@ -5,7 +5,7 @@ import json
 from Bio import SeqIO
 
 st.sidebar.title('Secuencia Genética')
-bcolor = st.sidebar.color_picker('Pick A Color', '#DBDEDB')
+bcolor = st.sidebar.color_picker('Escoge un color :)', '#DBDEDB')
 adn = st.sidebar.text_input('Ingrese la secuencia de ADN: ', "")
 
 
