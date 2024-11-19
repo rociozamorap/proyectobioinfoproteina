@@ -1,7 +1,6 @@
 import streamlit as st
 import numpy as np
 import matplotlib.pyplot as plt
-import json
 from Bio import SeqIO
 import pandas as pd
 import seaborn as sns
