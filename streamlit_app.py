@@ -22,33 +22,6 @@ st.sidebar.title('Proteina')
 bcolor = st.sidebar.color_picker('Pick A Color', '#DBDEDB')
 protein = st.sidebar.text_input('Ingrese la secuencia de ADN: ', "")
 
-if protein != "":
-    # Obtener información de la proteína
-    descriptor, title = get_protein_info(protein)
-
-    if descriptor and title:
-        st.sidebar.markdown(f'**{descriptor}**')
-        st.sidebar.markdown(f'**{title}**')
-
-        # Visualización 3D de la proteína usando py3Dmol
-        xyzview = py3Dmol.view(query=f'pdb:{protein}')
-        xyzview.setStyle({'stick': {}})  # Define el estilo de la visualización (por ejemplo, estilo 'stick')
-        xyzview.setBackgroundColor("white")  # Configura el color de fondo
-
-        # Condición para hacer girar la molécula
-        spin = st.sidebar.checkbox("Girar molécula")
-        if spin:
-            xyzview.spin(True)
-        else:
-            xyzview.spin(False)
-
-        # Ajusta el zoom de la visualización
-        xyzview.zoomTo()
-
-        # Mostrar la visualización en la aplicación de Streamlit
-        st.py3Dmol(xyzview, height=500, width=800)
-    else:
-        st.sidebar.error("No se pudo obtener información de la proteína.")
 
 # Configuración de Streamlit
 st.title("Selector de Gráficos")
