@@ -11,19 +11,19 @@ seqadn = st.sidebar.text_input('Ingrese la secuencia de ADN: ', "")
 bcolor = st.sidebar.color_picker('Escoge un color :)', '#DBDEDB')
 
 with st.sidebar:
-        api_options = ("echarts", "pyecharts")
+        api_options = ("Nucleótido", "Proteína")
         selected_api = st.selectbox(
             label="Choose your preferred API:",
             options=api_options,
         )
 
-        if selected_api == "echarts":
+        if selected_api == "Nucleótido":
             st.caption(
                 """ECharts demos are extracted from https://echarts.apache.org/examples/en/index.html, 
             by copying/formattting the 'option' json object into st_echarts.
             Definitely check the echarts example page, convert the JSON specs to Python Dicts and you should get a nice viz."""
             )
-        if selected_api == "pyecharts":
+        if selected_api == "Proteína":
             st.caption(
                 """Pyecharts demos are extracted from https://github.com/pyecharts/pyecharts-gallery,
             by copying the pyecharts object into st_pyecharts. 
