@@ -8,6 +8,12 @@ st.sidebar.title('Proteina')
 bcolor = st.sidebar.color_picker('Pick A Color', '#DBDEDB')
 protein = st.sidebar.text_input('Ingrese la secuencia de ADN: ', "")
 
+# Pedir al usuario que ingrese una cadena de ADN
+adn = input("Por favor, ingresa una cadena de ADN: ")
+
+# Imprimir la cadena de ADN ingresada
+print("La cadena de ADN ingresada es:", adn)
+
 # Configuración de Streamlit
 st.title("Selector de Gráficos")
 
