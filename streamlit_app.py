@@ -24,6 +24,8 @@ with st.sidebar:
             label="Escoge el tipo de biomolécula:",
             options=api_options,
         )
+seqadn = st.sidebar.text_input('Ingrese la secuencia de ADN: ', "")
+bcolor = st.sidebar.color_picker('Escoge un color :)', '#DBDEDB')
 
 if selected_api == "Nucleótido":
     seqadn != ""
@@ -74,9 +76,12 @@ if selected_api == "Nucleótido":
         ax.grid(True)
 
         return fig
-
-    # Calcular la composición de nucleótidos solo si la secuencia no está vacía
-    # Mostrar el gráfico seleccionado
+elif selected_api == "Proteína":
+            st.caption(
+                """Pyecharts demos are extracted from https://github.com/pyecharts/pyecharts-gallery,
+            by copying the pyecharts object into st_pyecharts. 
+            Pyecharts is still using ECharts 4 underneath, which is why the theming between st_echarts and st_pyecharts is different."""
+            )
     try:
         fig = generate_graph(seqadn, graph_type, bcolor)  # Pasar 'seqadn' como 'option'
         st.pyplot(fig)  # Mostrar el gráfico en Streamlit
@@ -84,16 +89,7 @@ if selected_api == "Nucleótido":
         st.error(f"¡Error al generar el gráfico: {e}!")
     else:
     st.warning("Por favor ingrese una secuencia de ADN válida antes de comenzar.")
-                
-elif selected_api == "Proteína":
-            st.caption(
-                """Pyecharts demos are extracted from https://github.com/pyecharts/pyecharts-gallery,
-            by copying the pyecharts object into st_pyecharts. 
-            Pyecharts is still using ECharts 4 underneath, which is why the theming between st_echarts and st_pyecharts is different."""
-            )
-                
-seqadn = st.sidebar.text_input('Ingrese la secuencia de ADN: ', "")
-bcolor = st.sidebar.color_picker('Escoge un color :)', '#DBDEDB')
+
 
 
 
