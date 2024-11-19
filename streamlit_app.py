@@ -64,7 +64,7 @@ if composition:
     st.title(f"Composición de {title}")
     graph_type = st.radio(
         "Selecciona el tipo de gráfico:", 
-        ["Gráfico de Pastel", "Gráifoc de Barras", "Gráfico de Barras Horizontales", "Gráfico de Área"]
+        ["Gráfico de Pastel", "Gráfico de Barras", "Gráfico de Barras Horizontales", "Gráfico de Área"]
     )
 
     # Función para generar gráficos
@@ -85,12 +85,12 @@ if composition:
                    colors=colors)
             ax.set_title(f"Composición de {title}")
 
-        elif graph_type == "Barras":
+        elif graph_type == "Gráfico de Barras":
             sns.set(style="whitegrid")
             sns.barplot(x=title, y="Composition", data=df, ax=ax, color=bcolor)
             ax.set_title(f"Composición de {title}")
 
-        elif graph_type == "Barras Horizontales":
+        elif graph_type == "Gráfico de Barras Horizontales":
             ax.barh(df[title], df["Composition"], color=bcolor)
             ax.set_title(f"Composición de {title} (Barras Horizontales)")
 
