@@ -27,20 +27,20 @@ ndf = ndf.rename(columns={"index": "Nucleotide", 0: "Composition"})
 
 # Selector para tipo de gráfico
 st.title("Selector de Gráficos")
-graph_type = st.radio("Selecciona el tipo de gráfico:", ["Lineas", "Barras", "Barras Horizontales", "Histograma"])
+graph_type = st.radio("Selecciona el tipo de gráfico:", ["Gráfico de Pastel", "Barras", "Barras Horizontales", "Histograma"])
 
 # Función para generar gráficos
 def generate_graph(seqadn, graph_type):
     fig, ax = plt.subplots(figsize=(8, 6))  # Crear una figura
 
-    # Gráfico de líneas (sin usar, porque no tiene sentido con ADN directamente)
-   if graph_type == "Gráfico de Pastel":
+    # Gráfico de pastel con la composición de nucleótidos
+    if graph_type == "Gráfico de Pastel":
         # Los valores para el gráfico de pastel serán los porcentajes de composición de nucleótidos
         labels = list(nuc.keys())  # Nucleótidos: A, C, G, T
         sizes = list(nuc.values())  # Composición en porcentaje
         ax.pie(sizes, labels=labels, autopct='%1.1f%%', startangle=90, colors=["#FF9999", "#66B3FF", "#99FF99", "#FFCC99"])
         ax.set_title("Composición de Nucleótidos en la Secuencia de ADN")
-        
+
     # Gráfico de barras con la composición de nucleótidos
     elif graph_type == "Barras":
         sns.set(style="whitegrid")
@@ -74,4 +74,4 @@ try:
         st.warning("Por favor ingrese una secuencia de ADN.")
 except Exception as e:
     st.error(f"¡Error al generar el gráfico: {e}!")
-   
+
