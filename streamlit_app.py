@@ -91,7 +91,7 @@ if selected_api == "Nucleótido":
 
 elif selected_api == "Proteína":
 if seqadn:  # Validar que se haya ingresado una secuencia
-        nuc = nucleotides_composition(seqadn)
+        prot = protein_composition(seqadn)
 
         # Crear un DataFrame con los datos de la composición de nucleótidos
         ndf = pd.DataFrame.from_dict(nuc, orient='index').reset_index()
