@@ -8,6 +8,7 @@ import seaborn as sns
 # Configuración de Streamlit
 st.sidebar.title('Secuencia Genética')
 seqadn = st.sidebar.text_input('Ingrese la secuencia de ADN: ', "")
+bcolor = st.sidebar.color_picker('Escoge un color :)', '#DBDEDB')
 
 # Función para calcular la composición de nucleótidos
 def nucleotides_composition(seqadn):
@@ -77,5 +78,4 @@ if seqadn != "":
 else:
     st.warning("Por favor ingrese una secuencia de ADN válida antes de comenzar.")
 
-bcolor = st.sidebar.color_picker('Escoge un color :)', '#DBDEDB')
 
