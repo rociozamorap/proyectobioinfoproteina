@@ -82,7 +82,7 @@ if composition:
                 colors.append(color)
             
             ax.pie(sizes, labels=labels, autopct='%1.1f%%', startangle=90, 
-                   colors=["#F5CBED", "#EFB3E3", "#DA84C9", "#BF63AD"])
+                   colors=colors)
             ax.set_title(f"Composición de {title}")
 
         elif graph_type == "Barras":
