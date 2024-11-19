@@ -64,7 +64,7 @@ if composition:
     st.title(f"Composición de {title}")
     graph_type = st.radio(
         "Selecciona el tipo de gráfico:", 
-        ["Gráfico de Pastel", "Barras", "Barras Horizontales", "Gráfico de Área"]
+        ["Gráfico de Pastel", "Gráifoc de Barras", "Gráfico de Barras Horizontales", "Gráfico de Área"]
     )
 
     # Función para generar gráficos
