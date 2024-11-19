@@ -22,7 +22,8 @@ protein = st.sidebar.text_input('Ingrese la secuencia de ADN:', "")
 st.title("Selector de Gráficos")
 
 # Selector para tipo de gráfico
-graph_type = st.radio("Selecciona el tipo de gráfico:", ["Line", "Bar", "Barh", "Hist"])
+graph_type = st.radio("Selecciona el tipo de gráfico:", ["Lineas", "Barras", "Barras Horizontales", "Histograma"])
+selection = st.radio("Selecciona una función:", options)
 
 # Función para generar gráficos
 def generate_graph(option, graph_type):
