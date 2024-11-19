@@ -3,10 +3,31 @@ import numpy as np
 import matplotlib.pyplot as plt
 import json
 from Bio import SeqIO
+import pandas as pd
+import seaborn as sns
 
 st.sidebar.title('Secuencia Genética')
 adn = st.sidebar.text_input('Ingrese la secuencia de ADN: ', "")
 bcolor = st.sidebar.color_picker('Escoge un color :)', '#DBDEDB')
+
+seqadn=adn
+def nucleotides_composition(seq):
+    nucleotides = {'A': 0, 'C': 0, 'G': 0, 'T': 0}
+    for n in nucleotides:
+        nucleotides[n] = seqadn.count(n)/len(seq)*100
+    return nucleotides
+nuc = nucleotides_composition(seqadn)
+nuc
+
+
+
+
+
+
+
+
+
+
 
 
 
