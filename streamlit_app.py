@@ -66,4 +66,10 @@ def generate_graph(seqadn, graph_type):
 # Mostrar el gráfico seleccionado
 try:
     if seqadn != "":
+        fig = generate_graph(seqadn, graph_type)  # Pasar 'seqadn' como 'option'
+        st.pyplot(fig)  # Mostrar el gráfico en Streamlit
+    else:
+        st.warning("Por favor ingrese una secuencia de ADN.")
+except Exception as e:
+    st.error(f"¡Error al generar el gráfico: {e}!")
    
