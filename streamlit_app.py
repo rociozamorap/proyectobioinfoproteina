@@ -26,7 +26,7 @@ with st.sidebar:
         )
 
 if selected_api == "Nucleótido":
-    seqadn != "":
+    seqadn != ""
     nuc = nucleotides_composition(seqadn)
 
     # Crear un DataFrame con los datos de la composición de nucleótidos
