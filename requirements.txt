@@ -4,3 +4,6 @@ stmol
 requests
 rdkit
 ipython_genutils
+matplotlib
+numpy
+
