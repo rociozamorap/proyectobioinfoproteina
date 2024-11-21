@@ -5,7 +5,6 @@ import pandas as pd
 import seaborn as sns
 
 st.header("Biomoléculas")
-st.image("https://www.shutterstock.com/image-illustration/molecules-3d-model-atoms-chemical-600nw-2499664001.jpg")
 
 # Configuración de Streamlit
 st.sidebar.title('Configuración')
@@ -46,6 +45,44 @@ if selected_api == "Nucleótido":
         composition = nucleotides_composition(seq_input)
         title = "Nucleótidos"
     else:
+        st.image("https://www.shutterstock.com/image-illustration/molecules-3d-model-atoms-chemical-600nw-2499664001.jpg")
+        st.sidebar.title("Resources")
+        st.sidebar.markdown(
+            """
+            - [National Library of Medicine](https://www.ncbi.nlm.nih.gov)
+            """
+        )
+        
+        st.sidebar.title("Bibliografía")
+        st.sidebar.markdown(
+            """
+            - [Biomoléculas: carbohidratos, proteínas,
+            lípidos y ácidos nucleicos.](https://www.unl.edu.ar/ingreso/cursos/medicina/wp-content/uploads/sites/8/2017/10/Quimica_09.pdf)
+            - [Nucleótido.](https://www.genome.gov/es/genetics-glossary/Nucleotido)
+            - [Proteína.](https://www.genome.gov/es/genetics-glossary/Proteina#)
+            """
+        )
+        
+        st.markdown("""
+        
+        Las biomoléculas son las moléculas que forman parte de la estructura y funcionamiento de los organismos vivos. Estas incluyen macromoléculas como polisacáridos, lípidos, proteínas y ácidos nucleicos, así como sus unidades más pequeñas: monosacáridos, ácidos grasos, aminoácidos y nucleótidos. Aunque existen cientos de biomoléculas distintas, desde un enfoque práctico se agrupan en siete categorías principales, que también son esenciales en la dieta: carbohidratos, proteínas, lípidos, agua, minerales (iones), vitaminas y ácidos nucleicos. Los minerales, al disolverse en los líquidos del cuerpo, se convierten en iones, fundamentales para diversas funciones biológicas.
+        """, unsafe_allow_html=True)
+        
+        st.markdown("---")
+        
+        st.markdown("""
+        
+        ### Nucleótido
+        
+        Un nucleótido es la unidad básica que compone los ácidos nucleicos, es decir, el ADN y el ARN, que son las moléculas responsables de almacenar y transmitir la información genética en los seres vivos. Cada nucleótido está formado por tres componentes principales: una molécula de azúcar, que puede ser ribosa (en el ARN) o desoxirribosa (en el ADN); un grupo fosfato, que actúa como un enlace entre nucleótidos para formar largas cadenas; y una base nitrogenada, que es la parte que varía y que determina las "letras" del código genético.
+        En el ADN, las bases nitrogenadas son adenina (A), guanina (G), citosina (C) y timina (T). En el ARN, la timina es reemplazada por el uracilo (U). Estos nucleótidos se enlazan uno tras otro para formar las largas cadenas que constituyen el ADN y el ARN, y las bases nitrogenadas interactúan entre sí (mediante enlaces específicos) para darle al ADN su característica estructura de doble hélice. Por lo tanto, los nucleótidos no solo son los "bloques de construcción" de los ácidos nucleicos, sino que también son esenciales para el almacenamiento y transmisión de la información genética.
+        
+        #### Proteína
+        
+        Las proteínas son moléculas grandes y complejas que desempeñan un papel esencial en casi todas las funciones del cuerpo humano. Actúan como los "trabajadores" principales de las células, ayudando en procesos tan variados como la construcción y mantenimiento de tejidos, el transporte de moléculas, la defensa contra infecciones y la regulación de actividades dentro del organismo.
+        Están formadas por cadenas largas de aminoácidos, que son como "bloques de construcción" conectados entre sí. Estas cadenas, llamadas polipéptidos, se pliegan de formas específicas para que la proteína pueda realizar su función. La secuencia de aminoácidos en una proteína está determinada por las instrucciones almacenadas en el ADN, lo que significa que cada proteína tiene una forma y función únicas según lo que el cuerpo necesita. Sin proteínas, el cuerpo no podría mantener su estructura ni llevar a cabo los procesos vitales que nos mantienen vivos y saludables.
+        
+        """, unsafe_allow_html=True)
         composition = None
 
 elif selected_api == "Proteína":
@@ -53,6 +90,44 @@ elif selected_api == "Proteína":
         composition = protein_composition(seq_input)
         title = "Bases de ARN"
     else:
+        st.image("https://www.shutterstock.com/image-illustration/molecules-3d-model-atoms-chemical-600nw-2499664001.jpg")
+        st.sidebar.title("Resources")
+        st.sidebar.markdown(
+            """
+            - [National Library of Medicine](https://www.ncbi.nlm.nih.gov)
+            """
+        )
+        
+        st.sidebar.title("Bibliografía")
+        st.sidebar.markdown(
+            """
+            - [Biomoléculas: carbohidratos, proteínas,
+            lípidos y ácidos nucleicos.](https://www.unl.edu.ar/ingreso/cursos/medicina/wp-content/uploads/sites/8/2017/10/Quimica_09.pdf)
+            - [Nucleótido.](https://www.genome.gov/es/genetics-glossary/Nucleotido)
+            - [Proteína.](https://www.genome.gov/es/genetics-glossary/Proteina#)
+            """
+        )
+        
+        st.markdown("""
+        
+        Las biomoléculas son las moléculas que forman parte de la estructura y funcionamiento de los organismos vivos. Estas incluyen macromoléculas como polisacáridos, lípidos, proteínas y ácidos nucleicos, así como sus unidades más pequeñas: monosacáridos, ácidos grasos, aminoácidos y nucleótidos. Aunque existen cientos de biomoléculas distintas, desde un enfoque práctico se agrupan en siete categorías principales, que también son esenciales en la dieta: carbohidratos, proteínas, lípidos, agua, minerales (iones), vitaminas y ácidos nucleicos. Los minerales, al disolverse en los líquidos del cuerpo, se convierten en iones, fundamentales para diversas funciones biológicas.
+        """, unsafe_allow_html=True)
+        
+        st.markdown("---")
+        
+        st.markdown("""
+        
+        ### Nucleótido
+        
+        Un nucleótido es la unidad básica que compone los ácidos nucleicos, es decir, el ADN y el ARN, que son las moléculas responsables de almacenar y transmitir la información genética en los seres vivos. Cada nucleótido está formado por tres componentes principales: una molécula de azúcar, que puede ser ribosa (en el ARN) o desoxirribosa (en el ADN); un grupo fosfato, que actúa como un enlace entre nucleótidos para formar largas cadenas; y una base nitrogenada, que es la parte que varía y que determina las "letras" del código genético.
+        En el ADN, las bases nitrogenadas son adenina (A), guanina (G), citosina (C) y timina (T). En el ARN, la timina es reemplazada por el uracilo (U). Estos nucleótidos se enlazan uno tras otro para formar las largas cadenas que constituyen el ADN y el ARN, y las bases nitrogenadas interactúan entre sí (mediante enlaces específicos) para darle al ADN su característica estructura de doble hélice. Por lo tanto, los nucleótidos no solo son los "bloques de construcción" de los ácidos nucleicos, sino que también son esenciales para el almacenamiento y transmisión de la información genética.
+        
+        #### Proteína
+        
+        Las proteínas son moléculas grandes y complejas que desempeñan un papel esencial en casi todas las funciones del cuerpo humano. Actúan como los "trabajadores" principales de las células, ayudando en procesos tan variados como la construcción y mantenimiento de tejidos, el transporte de moléculas, la defensa contra infecciones y la regulación de actividades dentro del organismo.
+        Están formadas por cadenas largas de aminoácidos, que son como "bloques de construcción" conectados entre sí. Estas cadenas, llamadas polipéptidos, se pliegan de formas específicas para que la proteína pueda realizar su función. La secuencia de aminoácidos en una proteína está determinada por las instrucciones almacenadas en el ADN, lo que significa que cada proteína tiene una forma y función únicas según lo que el cuerpo necesita. Sin proteínas, el cuerpo no podría mantener su estructura ni llevar a cabo los procesos vitales que nos mantienen vivos y saludables.
+        
+        """, unsafe_allow_html=True)
         composition = None
 
 # Crear gráficos si la composición es válida
@@ -114,43 +189,4 @@ if composition:
     except Exception as e:
         st.error(f"¡Error al generar el gráfico: {e}!")
 
-
-st.sidebar.title("Resources")
-st.sidebar.markdown(
-    """
-- [National Library of Medicine](https://www.ncbi.nlm.nih.gov)
-"""
-)
-
-st.sidebar.title("Bibliografía")
-st.sidebar.markdown(
-    """
-    - [Biomoléculas: carbohidratos, proteínas,
-    lípidos y ácidos nucleicos.](https://www.unl.edu.ar/ingreso/cursos/medicina/wp-content/uploads/sites/8/2017/10/Quimica_09.pdf)
-    - [Nucleótido.](https://www.genome.gov/es/genetics-glossary/Nucleotido)
-    - [Proteína.](https://www.genome.gov/es/genetics-glossary/Proteina#)
- 
-"""
-)
-
-st.markdown("""
-
-Las biomoléculas son las moléculas que forman parte de la estructura y funcionamiento de los organismos vivos. Estas incluyen macromoléculas como polisacáridos, lípidos, proteínas y ácidos nucleicos, así como sus unidades más pequeñas: monosacáridos, ácidos grasos, aminoácidos y nucleótidos. Aunque existen cientos de biomoléculas distintas, desde un enfoque práctico se agrupan en siete categorías principales, que también son esenciales en la dieta: carbohidratos, proteínas, lípidos, agua, minerales (iones), vitaminas y ácidos nucleicos. Los minerales, al disolverse en los líquidos del cuerpo, se convierten en iones, fundamentales para diversas funciones biológicas.
-""", unsafe_allow_html=True)
-
-st.markdown("---")
-
-st.markdown("""
-       
-### Nucleótido
-
-Un nucleótido es la unidad básica que compone los ácidos nucleicos, es decir, el ADN y el ARN, que son las moléculas responsables de almacenar y transmitir la información genética en los seres vivos. Cada nucleótido está formado por tres componentes principales: una molécula de azúcar, que puede ser ribosa (en el ARN) o desoxirribosa (en el ADN); un grupo fosfato, que actúa como un enlace entre nucleótidos para formar largas cadenas; y una base nitrogenada, que es la parte que varía y que determina las "letras" del código genético.
-En el ADN, las bases nitrogenadas son adenina (A), guanina (G), citosina (C) y timina (T). En el ARN, la timina es reemplazada por el uracilo (U). Estos nucleótidos se enlazan uno tras otro para formar las largas cadenas que constituyen el ADN y el ARN, y las bases nitrogenadas interactúan entre sí (mediante enlaces específicos) para darle al ADN su característica estructura de doble hélice. Por lo tanto, los nucleótidos no solo son los "bloques de construcción" de los ácidos nucleicos, sino que también son esenciales para el almacenamiento y transmisión de la información genética.
-
-
-#### Proteína
-
-Las proteínas son moléculas grandes y complejas que desempeñan un papel esencial en casi todas las funciones del cuerpo humano. Actúan como los "trabajadores" principales de las células, ayudando en procesos tan variados como la construcción y mantenimiento de tejidos, el transporte de moléculas, la defensa contra infecciones y la regulación de actividades dentro del organismo.
-Están formadas por cadenas largas de aminoácidos, que son como "bloques de construcción" conectados entre sí. Estas cadenas, llamadas polipéptidos, se pliegan de formas específicas para que la proteína pueda realizar su función. La secuencia de aminoácidos en una proteína está determinada por las instrucciones almacenadas en el ADN, lo que significa que cada proteína tiene una forma y función únicas según lo que el cuerpo necesita. Sin proteínas, el cuerpo no podría mantener su estructura ni llevar a cabo los procesos vitales que nos mantienen vivos y saludables.
-""", unsafe_allow_html=True)
 
