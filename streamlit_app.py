@@ -117,3 +117,8 @@ if composition:
 
 
 st.sidebar.title("Resources")
+st.sidebar.markdown(_(
+    """
+- [National Library of Medicine](https://www.ncbi.nlm.nih.gov)
+"""
+))
