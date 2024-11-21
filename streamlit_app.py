@@ -123,7 +123,7 @@ st.sidebar.markdown(
 """
 )
 
-st.markdown(""
+st.markdown("""
 ### Nucleótido
 
 Un nucleótido es la unidad básica que compone los ácidos nucleicos, es decir, el ADN y el ARN, que son las moléculas responsables de almacenar y transmitir la información genética en los seres vivos. Cada nucleótido está formado por tres componentes principales: una molécula de azúcar, que puede ser ribosa (en el ARN) o desoxirribosa (en el ADN); un grupo fosfato, que actúa como un enlace entre nucleótidos para formar largas cadenas; y una base nitrogenada, que es la parte que varía y que determina las "letras" del código genético.
@@ -134,5 +134,5 @@ En el ADN, las bases nitrogenadas son adenina (A), guanina (G), citosina (C) y t
 
 Las proteínas son moléculas grandes y complejas que desempeñan un papel esencial en casi todas las funciones del cuerpo humano. Actúan como los "trabajadores" principales de las células, ayudando en procesos tan variados como la construcción y mantenimiento de tejidos, el transporte de moléculas, la defensa contra infecciones y la regulación de actividades dentro del organismo.
 Están formadas por cadenas largas de aminoácidos, que son como "bloques de construcción" conectados entre sí. Estas cadenas, llamadas polipéptidos, se pliegan de formas específicas para que la proteína pueda realizar su función. La secuencia de aminoácidos en una proteína está determinada por las instrucciones almacenadas en el ADN, lo que significa que cada proteína tiene una forma y función únicas según lo que el cuerpo necesita. Sin proteínas, el cuerpo no podría mantener su estructura ni llevar a cabo los procesos vitales que nos mantienen vivos y saludables.
-"", unsafe_allow_html=True)
+""", unsafe_allow_html=True)
 
