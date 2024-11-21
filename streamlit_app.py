@@ -45,7 +45,6 @@ if selected_api == "Nucleótido":
         composition = nucleotides_composition(seq_input)
         title = "Nucleótidos"
     else:
-        st.warning("Por favor, ingrese una secuencia de ADN válida antes de comenzar.")
         composition = None
 
 elif selected_api == "Proteína":
@@ -53,7 +52,6 @@ elif selected_api == "Proteína":
         composition = protein_composition(seq_input)
         title = "Bases de ARN"
     else:
-        st.warning("Por favor, ingrese una secuencia de ARN válida antes de comenzar.")
         composition = None
 
 # Crear gráficos si la composición es válida
