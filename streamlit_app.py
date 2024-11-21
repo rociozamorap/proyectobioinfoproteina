@@ -7,8 +7,6 @@ import seaborn as sns
 st.header("Biomoléculas")
 st.image("https://www.shutterstock.com/image-illustration/molecules-3d-model-atoms-chemical-600nw-2499664001.jpg")
 
-st.markdown("---")
-
 # Configuración de Streamlit
 st.sidebar.title('Configuración')
 
@@ -127,7 +125,12 @@ st.sidebar.markdown(
 st.markdown("""
 
 Las biomoléculas son las moléculas que forman parte de la estructura y funcionamiento de los organismos vivos. Estas incluyen macromoléculas como polisacáridos, lípidos, proteínas y ácidos nucleicos, así como sus unidades más pequeñas: monosacáridos, ácidos grasos, aminoácidos y nucleótidos. Aunque existen cientos de biomoléculas distintas, desde un enfoque práctico se agrupan en siete categorías principales, que también son esenciales en la dieta: carbohidratos, proteínas, lípidos, agua, minerales (iones), vitaminas y ácidos nucleicos. Los minerales, al disolverse en los líquidos del cuerpo, se convierten en iones, fundamentales para diversas funciones biológicas.
+""", unsafe_allow_html=True)
 
+st.markdown("---")
+
+st.markdown("""
+       
 ### Nucleótido
 
 Un nucleótido es la unidad básica que compone los ácidos nucleicos, es decir, el ADN y el ARN, que son las moléculas responsables de almacenar y transmitir la información genética en los seres vivos. Cada nucleótido está formado por tres componentes principales: una molécula de azúcar, que puede ser ribosa (en el ARN) o desoxirribosa (en el ADN); un grupo fosfato, que actúa como un enlace entre nucleótidos para formar largas cadenas; y una base nitrogenada, que es la parte que varía y que determina las "letras" del código genético.
