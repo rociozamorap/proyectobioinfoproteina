@@ -5,8 +5,7 @@ import pandas as pd
 import seaborn as sns
 
 st.header("Biomoléculas")
-st.image("https://www.shutterstock.com/image-illustration/molecules-3d-model-atoms-chemical-600nw-2499664001.jpg
-")
+st.image("https://www.shutterstock.com/image-illustration/molecules-3d-model-atoms-chemical-600nw-2499664001.jpg")
 
 # Configuración de Streamlit
 st.sidebar.title('Configuración')
