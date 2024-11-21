@@ -46,11 +46,14 @@ if selected_api == "Nucleótido":
         title = "Nucleótidos"
     else:
         # Centrar la imagen
+
         st.markdown("""
-        <div style="text-align: center;">
-            <img src="https://www.shutterstock.com/image-illustration/molecules-3d-model-atoms-chemical-600nw-2499664001.jpg" width="600">
-        </div>
-        """, unsafe_allow_html=True)
+    <div style="text-align: center;">
+        <img src="https://www.shutterstock.com/image-illustration/molecules-3d-model-atoms-chemical-600nw-2499664001.jpg"/>
+    </div>
+    <br>  <!-- Este es el salto de línea para el espacio -->
+""", unsafe_allow_html=True)
+
 
         st.sidebar.title("Resources")
         st.sidebar.markdown(
@@ -103,10 +106,11 @@ elif selected_api == "Proteína":
     else:
         # Centrar la imagen
         st.markdown("""
-        <div style="text-align: center;">
-            <img src="https://www.shutterstock.com/image-illustration/molecules-3d-model-atoms-chemical-600nw-2499664001.jpg" width="600">
-        </div>
-        """, unsafe_allow_html=True)
+    <div style="text-align: center;">
+        <img src="https://www.shutterstock.com/image-illustration/molecules-3d-model-atoms-chemical-600nw-2499664001.jpg"/>
+    </div>
+    <br>  <!-- Este es el salto de línea para el espacio -->
+""", unsafe_allow_html=True)
 
         st.sidebar.title("Resources")
         st.sidebar.markdown(
