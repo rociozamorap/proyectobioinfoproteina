@@ -115,6 +115,13 @@ if composition:
         st.error(f"¡Error al generar el gráfico: {e}!")
 
 
+st.sidebar.title(" ### Resources")
+st.sidebar.markdown(
+    """
+- [National Library of Medicine](https://www.ncbi.nlm.nih.gov)
+"""
+)
+
 st.sidebar.title("Resources")
 st.sidebar.markdown(
     """
