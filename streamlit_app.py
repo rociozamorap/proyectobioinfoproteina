@@ -115,6 +115,7 @@ if composition:
     except Exception as e:
         st.error(f"¡Error al generar el gráfico: {e}!")
 
+
 st.sidebar.header(_("Resources"))
 st.sidebar.markdown(_(
     """
