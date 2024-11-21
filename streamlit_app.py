@@ -124,8 +124,8 @@ st.sidebar.markdown(
 
 st.markdown("""
 
-
 Las biomoléculas son las moléculas que forman parte de la estructura y funcionamiento de los organismos vivos. Estas incluyen macromoléculas como polisacáridos, lípidos, proteínas y ácidos nucleicos, así como sus unidades más pequeñas: monosacáridos, ácidos grasos, aminoácidos y nucleótidos. Aunque existen cientos de biomoléculas distintas, desde un enfoque práctico se agrupan en siete categorías principales, que también son esenciales en la dieta: carbohidratos, proteínas, lípidos, agua, minerales (iones), vitaminas y ácidos nucleicos. Los minerales, al disolverse en los líquidos del cuerpo, se convierten en iones, fundamentales para diversas funciones biológicas.
+
 
 ### Nucleótido
 
