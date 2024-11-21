@@ -116,4 +116,4 @@ if composition:
         st.error(f"¡Error al generar el gráfico: {e}!")
 
 
-st.sidebar.header(_("Resources"))
+st.sidebar.title("Resources")
