@@ -4,12 +4,6 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import seaborn as sns
 
-show_pages(
-    [   
-        Page("dezoomcamp/DE_Zoomcamp.py", "DE Zoomcamp", "💻"),
-    ]
-)
-
 st.header("Biomoléculas")
 st.image("https://www.shutterstock.com/image-illustration/molecules-3d-model-atoms-chemical-600nw-2499664001.jpg")
 
