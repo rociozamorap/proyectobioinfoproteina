@@ -114,3 +114,8 @@ if composition:
         st.pyplot(fig)  # Mostrar el gráfico en Streamlit
     except Exception as e:
         st.error(f"¡Error al generar el gráfico: {e}!")
+
+st.sidebar.header(_("Resources"))
+st.sidebar.markdown(_(
+    """
+- [National Library of Medicine](https://www.ncbi.nlm.nih.gov)
