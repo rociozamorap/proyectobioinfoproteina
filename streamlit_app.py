@@ -39,7 +39,6 @@ with st.sidebar:
     )
     seq_input = st.text_input('Ingrese la secuencia: ', "")
     bcolor = st.color_picker('Escoge un color para los gráficos :)', '#DBDEDB')
-    bcolor = st.sidebar.color_picker('Escoge un color para el fondo :)', '#DBDEDB')
 
 # Lógica para Nucleótidos y Proteínas
 if selected_api == "Nucleótido":
@@ -214,6 +213,8 @@ if composition:
         st.pyplot(fig)  # Mostrar el gráfico en Streamlit
     except Exception as e:
         st.error(f"¡Error al generar el gráfico: {e}!")
+
+bcolor = st.sidebar.color_picker('Escoge un color para el fondo :)', '#DBDEDB')
 
 # Función para oscurecer un color hex
 def darken_color(hex_color, factor=0.8):
