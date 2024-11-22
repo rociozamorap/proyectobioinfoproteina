@@ -41,6 +41,16 @@ page_bg_style = f"""
 """
 st.markdown(page_bg_style, unsafe_allow_html=True)
 
+# Sidebar para seleccionar opciones
+with st.sidebar:
+    api_options = ("Nucleótido", "Proteína")
+    selected_api = st.selectbox(
+        label="Escoge el tipo de biomolécula:",
+        options=api_options,
+    )
+    seq_input = st.text_input('Ingrese la secuencia: ', "")
+    bcolor = st.color_picker('Escoge un color para los gráficos :)', '#DBDEDB')
+
 # Mantener recursos y bibliografía visibles
 st.sidebar.title("Recursos")
 st.sidebar.markdown(
@@ -58,15 +68,6 @@ st.sidebar.markdown(
     """
 )
 
-# Sidebar para seleccionar opciones
-with st.sidebar:
-    api_options = ("Nucleótido", "Proteína")
-    selected_api = st.selectbox(
-        label="Escoge el tipo de biomolécula:",
-        options=api_options,
-    )
-    seq_input = st.text_input('Ingrese la secuencia: ', "")
-    bcolor = st.color_picker('Escoge un color para los gráficos :)', '#DBDEDB')
 
 # Función para calcular la composición de nucleótidos
 def nucleotides_composition(seqadn):
