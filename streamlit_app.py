@@ -214,11 +214,14 @@ if composition:
     except Exception as e:
         st.error(f"¡Error al generar el gráfico: {e}!")
 
-# Cambiar el color de fondo
+# Cambiar el color de fondo de la app y de la barra lateral
 page_bg_style = f"""
 <style>
     .stApp {{
-        background-color: {bcolor};  /* Usa el color seleccionado en el color picker */
+        background-color: {bcolor};  /* Fondo del cuerpo principal */
+    }}
+    .css-1d391kg {{
+        background-color: {bcolor};  /* Fondo de la barra lateral */
     }}
 </style>
 """
