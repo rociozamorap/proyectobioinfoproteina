@@ -220,7 +220,7 @@ page_bg_style = f"""
     .stApp {{
         background-color: {bcolor};  /* Fondo del cuerpo principal */
     }}
-    .css-1d391kg {{
+    [data-testid="stSidebar"] {{
         background-color: {bcolor};  /* Fondo de la barra lateral */
     }}
 </style>
