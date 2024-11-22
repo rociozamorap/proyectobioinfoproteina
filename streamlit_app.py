@@ -58,6 +58,16 @@ st.sidebar.markdown(
     """
 )
 
+# Sidebar para seleccionar opciones
+with st.sidebar:
+    api_options = ("Nucleótido", "Proteína")
+    selected_api = st.selectbox(
+        label="Escoge el tipo de biomolécula:",
+        options=api_options,
+    )
+    seq_input = st.text_input('Ingrese la secuencia: ', "")
+    bcolor = st.color_picker('Escoge un color para los gráficos :)', '#DBDEDB')
+
 # Función para calcular la composición de nucleótidos
 def nucleotides_composition(seqadn):
     nucleotides = {'A': 0, 'C': 0, 'G': 0, 'T': 0}
@@ -77,16 +87,6 @@ def protein_composition(seqarn):
     for p in proteina:
         proteina[p] = seqarn.upper().count(p) / len(seqarn) * 100  # Calcula el porcentaje de cada base
     return proteina
-
-# Sidebar para seleccionar opciones
-with st.sidebar:
-    api_options = ("Nucleótido", "Proteína")
-    selected_api = st.selectbox(
-        label="Escoge el tipo de biomolécula:",
-        options=api_options,
-    )
-    seq_input = st.text_input('Ingrese la secuencia: ', "")
-    bcolor = st.color_picker('Escoge un color para los gráficos :)', '#DBDEDB')
 
 # Lógica para Nucleótidos y Proteínas
 if selected_api == "Nucleótido":
