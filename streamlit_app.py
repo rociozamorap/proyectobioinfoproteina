@@ -4,6 +4,16 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import seaborn as sns
 
+# Cambiar el color de fondo
+page_bg_style = f"""
+<style>
+    .stApp {{
+        background-color: {bcolor};  /* Usa el color seleccionado en el color picker */
+    }}
+</style>
+"""
+st.markdown(page_bg_style, unsafe_allow_html=True)
+
 st.header("Biomoléculas")
 
 # Configuración de Streamlit
