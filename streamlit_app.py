@@ -10,6 +10,37 @@ st.header("Biomoléculas")
 # Configuración de Streamlit
 st.sidebar.title('Configuración')
 
+# Sidebar para color y opciones de biomoléculas
+bcolor = st.sidebar.color_picker('Escoge un color para el fondo :)', '#DBDEDB')
+
+# Función para oscurecer un color hex
+def darken_color(hex_color, factor=0.8):
+    # Convertir el color hexadecimal a RGB
+    hex_color = hex_color.lstrip('#')
+    r, g, b = tuple(int(hex_color[i:i+2], 16) for i in (0, 2, 4))
+    # Aplicar el factor de oscuridad
+    r = max(0, int(r * factor))
+    g = max(0, int(g * factor))
+    b = max(0, int(b * factor))
+    # Convertir de nuevo a hexadecimal
+    return f"#{r:02x}{g:02x}{b:02x}"
+
+# Oscurecer el color para la barra lateral
+sidebar_color = darken_color(bcolor)
+
+# Cambiar el color de fondo de la app y de la barra lateral
+page_bg_style = f"""
+<style>
+    .stApp {{
+        background-color: {bcolor};  /* Fondo del cuerpo principal */
+    }}
+    [data-testid="stSidebar"] {{
+        background-color: {sidebar_color};  /* Fondo de la barra lateral */
+    }}
+</style>
+"""
+st.markdown(page_bg_style, unsafe_allow_html=True)
+
 # Función para calcular la composición de nucleótidos
 def nucleotides_composition(seqadn):
     nucleotides = {'A': 0, 'C': 0, 'G': 0, 'T': 0}
@@ -214,32 +245,3 @@ if composition:
     except Exception as e:
         st.error(f"¡Error al generar el gráfico: {e}!")
 
-bcolor = st.sidebar.color_picker('Escoge un color para el fondo :)', '#DBDEDB')
-
-# Función para oscurecer un color hex
-def darken_color(hex_color, factor=0.8):
-    # Convertir el color hexadecimal a RGB
-    hex_color = hex_color.lstrip('#')
-    r, g, b = tuple(int(hex_color[i:i+2], 16) for i in (0, 2, 4))
-    # Aplicar el factor de oscuridad
-    r = max(0, int(r * factor))
-    g = max(0, int(g * factor))
-    b = max(0, int(b * factor))
-    # Convertir de nuevo a hexadecimal
-    return f"#{r:02x}{g:02x}{b:02x}"
-
-# Oscurecer el color para la barra lateral
-sidebar_color = darken_color(bcolor)
-
-# Cambiar el color de fondo de la app y de la barra lateral
-page_bg_style = f"""
-<style>
-    .stApp {{
-        background-color: {bcolor};  /* Fondo del cuerpo principal */
-    }}
-    [data-testid="stSidebar"] {{
-        background-color: {sidebar_color};  /* Fondo de la barra lateral */
-    }}
-</style>
-"""
-st.markdown(page_bg_style, unsafe_allow_html=True)
