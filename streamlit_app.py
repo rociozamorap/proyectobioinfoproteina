@@ -41,6 +41,23 @@ page_bg_style = f"""
 """
 st.markdown(page_bg_style, unsafe_allow_html=True)
 
+# Mantener recursos y bibliografía visibles
+st.sidebar.title("Recursos")
+st.sidebar.markdown(
+    """
+    - [National Library of Medicine](https://www.ncbi.nlm.nih.gov)
+    """
+)
+
+st.sidebar.title("Bibliografía")
+st.sidebar.markdown(
+    """
+    - [Biomoléculas: carbohidratos, proteínas, lípidos y ácidos nucleicos.](https://www.unl.edu.ar/ingreso/cursos/medicina/wp-content/uploads/sites/8/2017/10/Quimica_09.pdf)
+    - [Nucleótido.](https://www.genome.gov/es/genetics-glossary/Nucleotido)
+    - [Proteína.](https://www.genome.gov/es/genetics-glossary/Proteina#)
+    """
+)
+
 # Función para calcular la composición de nucleótidos
 def nucleotides_composition(seqadn):
     nucleotides = {'A': 0, 'C': 0, 'G': 0, 'T': 0}
@@ -85,24 +102,6 @@ if selected_api == "Nucleótido":
     </div>
     <br>  <!-- Este es el salto de línea para el espacio -->
 """, unsafe_allow_html=True)
-
-
-        st.sidebar.title("Resources")
-        st.sidebar.markdown(
-            """
-            - [National Library of Medicine](https://www.ncbi.nlm.nih.gov)
-            """
-        )
-        
-        st.sidebar.title("Bibliografía")
-        st.sidebar.markdown(
-            """
-            - [Biomoléculas: carbohidratos, proteínas,
-            lípidos y ácidos nucleicos.](https://www.unl.edu.ar/ingreso/cursos/medicina/wp-content/uploads/sites/8/2017/10/Quimica_09.pdf)
-            - [Nucleótido.](https://www.genome.gov/es/genetics-glossary/Nucleotido)
-            - [Proteína.](https://www.genome.gov/es/genetics-glossary/Proteina#)
-            """
-        )
         
         # Justificar el texto
         st.markdown("""
