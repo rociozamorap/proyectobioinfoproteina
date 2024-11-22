@@ -38,7 +38,8 @@ with st.sidebar:
         options=api_options,
     )
     seq_input = st.text_input('Ingrese la secuencia: ', "")
-    bcolor = st.color_picker('Escoge un color :)', '#DBDEDB')
+    bcolor = st.color_picker('Escoge un color para los gráficos :)', '#DBDEDB')
+    bcolor = st.sidebar.color_picker('Escoge un color para el fondo :)', '#DBDEDB')
 
 # Lógica para Nucleótidos y Proteínas
 if selected_api == "Nucleótido":
@@ -225,9 +226,6 @@ def darken_color(hex_color, factor=0.8):
     b = max(0, int(b * factor))
     # Convertir de nuevo a hexadecimal
     return f"#{r:02x}{g:02x}{b:02x}"
-
-# Sidebar para elegir el color
-bcolor = st.sidebar.color_picker('Escoge un color para el fondo', '#DBDEDB')
 
 # Oscurecer el color para la barra lateral
 sidebar_color = darken_color(bcolor)
