@@ -142,23 +142,6 @@ elif selected_api == "Proteína":
     </div>
     <br>  <!-- Este es el salto de línea para el espacio -->
 """, unsafe_allow_html=True)
-
-        st.sidebar.title("Resources")
-        st.sidebar.markdown(
-            """
-            - [National Library of Medicine](https://www.ncbi.nlm.nih.gov)
-            """
-        )
-        
-        st.sidebar.title("Bibliografía")
-        st.sidebar.markdown(
-            """
-            - [Biomoléculas: carbohidratos, proteínas,
-            lípidos y ácidos nucleicos.](https://www.unl.edu.ar/ingreso/cursos/medicina/wp-content/uploads/sites/8/2017/10/Quimica_09.pdf)
-            - [Nucleótido.](https://www.genome.gov/es/genetics-glossary/Nucleotido)
-            - [Proteína.](https://www.genome.gov/es/genetics-glossary/Proteina#)
-            """
-        )
         
         # Justificar el texto
         st.markdown("""
